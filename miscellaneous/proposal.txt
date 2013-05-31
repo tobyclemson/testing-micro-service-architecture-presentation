@@ -1,0 +1,31 @@
+# What is the title of your session?
+Testing Strategies in a Micro-Service Architecture
+
+# Who else will be presenting/facilitating this session?
+
+
+# What is the format of this session?
+Presentation
+
+# How much time will the session take?
+15 minutes
+
+# Please provide an abstract or summary of your session.
+There has been a shift in service based architectures over the last few years towards smaller, more focussed "micro" services. There are many benefits with this approach such as the ability to independently deploy, scale and maintain each component and parallelise development across multiple teams. However, once these additional network partitions have been introduced, the testing strategies that applied for monolithic in process applications need to be reconsidered.
+
+I plan to discuss a number of approaches for managing the additional testing complexity of multiple independently deployable components as well as how to have tests and the application remain correct despite having multiple teams each acting as guardians for different services.
+
+# What category best encompasses your session? 
+Technical
+
+# What type of audience is your session designed for?
+Aimed at developers, testers, devops people and anybody else who is interested in testing applied to micro service architecture. 
+
+# Have you presented or ran this session before? If so, where? 
+No.
+
+# What materials, setup, etc are required for your session?
+A projector with a MacBook Pro mini DVI adapter should be the only thing needed.
+
+# Anything else we should know?
+Can present for longer than 15 minutes if needed.
