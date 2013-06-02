@@ -72,7 +72,6 @@
          </dl>
       </article>
 
-
       <article>
          <h3>
           Anatomy of a Micro-Service: Components
@@ -101,17 +100,44 @@
         <h3>
           Micro-Service Testing: Unit Level
         </h3>
-        <ul class="build">
-          <li>This is an example of a list</li>
-          <li>The list items fade in</li>
-          <li>Last one!</li>
-        </ul>
-
-        <div class="build">
-          <p>Any element with child nodes can build.</p>
-          <p>It doesn't have to be a list.</p>
-        </div>
+        <dl>
+           <dt><dfn>Unit test</dfn></dt>
+           <dd>To take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect.</dd>
+           <div class='author'>
+             <a href='http://msdn.microsoft.com/en-us/library/aa292197%28VS.71%29.aspx'>MSDN</a>
+           </div>
+        </dl>
       </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Unit Level
+        </h3>
+        <ul class="build">
+          <li>Two styles of unit testing, mockist and classic.</li>
+          <ul>
+            <li>Classic: State based behaviour testing.</li>
+            <li>Mockist: Interaction testing supported by mocks.</li>
+          </ul>
+          <li>What should be unit tested?</li>
+          <ul>
+            <li>Services are commonly a rich domain surrounded by plumbing and coordination code.</li>
+            <li>Domain often lends itself to a classic style of testing.</li>
+            <li>Plumbing and coordination logic usually easier to test using a mockist style.</li>
+          </ul>
+          <li>The more micro the services, the more plumbing and coordination logic overall.</li>
+          <li>Does comprehensive unit testing pay off?</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Unit Level
+        </h3>
+        <img class='full-slide-image' src='images/testing-unit.png'
+             alt="Diagram showing what gets tested in a micro-service">
+      </article>
+
 
       <article class='smaller'>
         <h3>
