@@ -34,7 +34,7 @@
         <h3>
           The Plan
         </h3>
-        <ul>
+        <ul class='build'>
           <li>Micro-Services:</li>
           <ul>
             <li>Definition</li>
@@ -45,7 +45,7 @@
           <ul>
             <li>Unit</li>
             <li>Integration</li>
-            <li>Acceptance</li>
+            <li>Component</li>
             <li>End to End</li>
             <li>Contracts</li>
           </ul>
@@ -102,7 +102,7 @@
         </h3>
         <dl>
            <dt><dfn>Unit test</dfn></dt>
-           <dd>To take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect.</dd>
+           <dd>A test of the smallest piece of testable software in the application, isolated from the remainder of the code, to determine whether it behaves as expected.</dd>
            <div class='author'>
              <a href='http://msdn.microsoft.com/en-us/library/aa292197%28VS.71%29.aspx'>MSDN</a>
            </div>
@@ -114,7 +114,7 @@
           Micro-Service Testing: Unit Level
         </h3>
         <ul class="build">
-          <li>Two styles of unit testing, mockist and classic.</li>
+          <li>Two styles of unit testing, <b>mockist</b> and <b>classic</b>.</li>
           <ul>
             <li>Classic: State based behaviour testing.</li>
             <li>Mockist: Interaction testing supported by mocks.</li>
@@ -135,7 +135,89 @@
           Micro-Service Testing: Unit Level
         </h3>
         <img class='full-slide-image' src='images/testing-unit.png'
-             alt="Diagram showing what gets tested in a micro-service"/>
+             alt="Diagram showing what gets unit tested in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-1.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <dl>
+           <dt><dfn>Integration test</dfn></dt>
+           <dd>A test to verify the communication paths and interaction between components and to detect interface defects.</dd>
+           <div class='author'>
+             <a href='http://www.techopedia.com/definition/7751/integration-testing'>[1]</a>
+             <a href='http://en.wikipedia.org/wiki/Software_testing#Testing_levels'>[2]</a>
+             <a href='http://programmers.stackexchange.com/questions/48237/what-is-an-integration-test-exactly'>[3]</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <ul class="build">
+          <li>Test the gap between our integration code and the external system to which we are integrating, e.g., <b>other services</b>, <b>data stores</b> or <b>caches</b>.</li>
+          <li>Not necessarily comprehensive, cover basic success and error paths.
+          <li>Other mechanisms exist for verifying the external system's contract.</li>
+          <li>Are they valuable?</li>
+          <ul class='comparison'>
+            <li class='plus'>Provide fast feedback whilst iterating on integration modules.</li>
+            <li class='minus'>Have a dependency on a system not necessarily in our control.</li>
+          </ul>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <img class='full-slide-image' src='images/testing-integration.png'
+             alt="Diagram showing what gets integration tested in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-2.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level
+        </h3>
+        <dl>
+           <dt><dfn>Component test</dfn></dt>
+           <dd>A test that limits the scope of the exercised software to a portion of the system under test, by manipulating the system through internal code interfaces and by using test doubles to isolate the code under test from other components.</dd>
+           <div class='author'>
+             <a href='http://martinfowler.com/bliki/ComponentTest.html'>Martin Fowler</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level
+        </h3>
+        <ul class='build'>
+          <li>Lots of options!</li>
+          <ul>
+            <li>in-process vs. out of process</li>
+            <li>internal stubbing vs. external stubbing</li>
+            <li>real datastore vs. in-memory datastore</li>
+          </ul>
+        </ul>
       </article>
 
     </section>
