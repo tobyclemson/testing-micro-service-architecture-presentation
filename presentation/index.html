@@ -49,7 +49,7 @@
             <li>End to End</li>
             <li>Contracts</li>
           </ul>
-          <li>Conclusion</li>
+          <li>Questions?</li>
         </ul>
       </article>
 
@@ -211,15 +211,102 @@
           Micro-Service Testing: Component Level
         </h3>
         <ul class='build'>
+          <li>Treat each microservice as a component</li>
           <li>Lots of options!</li>
           <ul>
             <li>in-process vs. out of process</li>
             <li>internal stubbing vs. external stubbing</li>
             <li>real datastore vs. in-memory datastore</li>
           </ul>
+          <li>Act as acceptance tests at the service level, testing the core business purpose of the service.</li>
+          <li>Often care more about the contract of the service than other test suites.</li>
         </ul>
       </article>
 
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level: In Process
+        </h3>
+        <img class='full-slide-image' src='images/testing-component-in-process.png'
+             alt="Diagram showing what gets component tested using in process testing in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level: Out of Process
+        </h3>
+        <img class='full-slide-image' src='images/testing-component-out-of-process.png'
+             alt="Diagram showing what gets component tested using out of process testing in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-3.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <dl>
+           <dt><dfn>Functional test</dfn></dt>
+           <dd>A test that verifies that a system meets external requirements and achieves its goals, testing the entire system, end to end.</dd>
+           <div class='author'>
+             <a href='http://c2.com/cgi/wiki?FunctionalTest'>[1]</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <ul class='build'>
+          <li>Exercise as much of the fully deployed system as possible.</li>
+          <li>Often more business facing, utilising business readable DSLs.</li>
+          <li>More brittle than other levels of testing, should be few in number.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <img class='full-slide-image' src='images/testing-end-to-end.png'
+             alt="Diagram showing a functional testing flow."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract Tests
+        </h3>
+        <dl>
+           <dt><dfn>Contract tests</dfn></dt>
+           <dd>A test at the boundary of an external service verifying that it meets the contract expected by a consuming service.</dd>
+           <div class='author'>
+             Me
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract Tests
+        </h3>
+        <ul class='build'>
+          <li>Completely decoupled from consuming service.</li>
+          <li>Assert against only those aspects of the external service required by the consuming service.</li>
+          <li>Not component tests, only checking inputs and outputs at the service's interface.</li>
+          <li>Ideally, packaged and runnable in the external service's pipeline.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Questions?</h2>
+      </article>
     </section>
 
   </body>
