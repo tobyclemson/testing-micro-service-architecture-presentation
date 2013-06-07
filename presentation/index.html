@@ -233,6 +233,20 @@
 
       <article>
         <h3>
+          Aside: Internal Resources
+        </h3>
+        <ul class='build'>
+          <li>Whilst it might seem strange, internal resources prove very useful</li>
+          <ul>
+            <li>e.g., logs, feature flags, database commands, metrics, maintenance controls</li>
+          </ul>
+          <li>Can be locked down at the network level to avoid accidents in production, for example, by prefixing all with <code>/internal/...</code></li>
+          <li>Often evolve to public resources during the lifetime of a code base.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
           Micro-Service Testing: Component Level: Out of Process
         </h3>
         <img class='full-slide-image' src='images/testing-component-out-of-process.png'
@@ -267,7 +281,7 @@
         <ul class='build'>
           <li>Exercise as much of the fully deployed system as possible.</li>
           <li>Often more business facing, utilising business readable DSLs.</li>
-          <li>More brittle than other levels of testing, should be few in number.</li>
+          <li>Tend to be more brittle or expensive than other levels of testing, in which case, should be few in number.</li>
         </ul>
       </article>
 
@@ -303,6 +317,15 @@
           <li>Ideally, packaged and runnable in the external service's pipeline.</li>
         </ul>
       </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract
+        </h3>
+        <img class='full-slide-image' src='images/testing-contract.png'
+             alt="Diagram showing contract testing."/>
+      </article>
+
 
       <article>
         <h2>Questions?</h2>
