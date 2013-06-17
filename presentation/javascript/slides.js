@@ -560,6 +560,7 @@ function addGeneralStyle() {
   var el = document.createElement('link');
   el.rel = 'stylesheet';
   el.type = 'text/css';
+  el.media = 'screen';
   el.href = PERMANENT_URL_PREFIX + 'stylesheets/styles.css';
   document.body.appendChild(el);
 

@@ -1,0 +1,378 @@
+@page {
+    size: A4 landscape;
+}
+
+.slides.template-2013naad article.front-page {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/first-page-left-print.png'), 
+                      url('../images/first-page-right-print.png');
+    background-position: 95% 95%, left 15%, right 60%;
+    background-repeat: no-repeat;
+    background-size: 19%, 15%, 9.5%;
+}
+
+.slides.template-2013naad > article:not(.nobackground):not(.front-page) {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/general-page-left-print.png'),
+                      url('../images/general-page-right-print.png');
+    background-position: 95% 95%, left 40%, right 54%;
+    background-repeat: no-repeat;
+    background-size: 20%, 9.1%, 9.1%;
+    background-color: white;  
+} 
+
+.slides.template-2013naad > article {
+    padding: 75px 84px;
+}
+
+.slides.template-2013naad article dl div.author {
+    margin-top: 0px;
+    margin-right: 76px;
+    font-size: 26px;
+}
+
+article {
+    margin:auto;
+    page-break-after: always;
+    width: 850px;
+    height: 661px;
+    padding: 38px 57px;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .3);
+    background-color: white;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: rgb(102, 102, 102);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -1px;
+}
+
+article.last {
+    page-break-after: auto;
+}
+
+article.next, article.past {
+    display: block;    
+}
+
+body {
+    display: block !important;
+}
+
+b {
+  font-weight: 600;
+}
+
+.blue {
+  color: rgb(0, 102, 204);
+}
+.yellow {
+  color: rgb(255, 211, 25);
+}
+.green {
+  color: rgb(0, 138, 53);
+}
+.red {
+  color: rgb(255, 0, 0);
+}
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
+
+a {
+  color: rgb(0, 102, 204);
+}
+a:visited {
+  color: rgba(0, 102, 204, .75);
+}
+a:hover {
+  color: black;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+
+  margin-top: 19px;
+}
+p:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 57px;
+  line-height: 57px;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 189px;
+  padding-right: 38px;
+
+  font-weight: 600;
+
+  letter-spacing: -3px;
+
+  color: rgb(51, 51, 51);
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 42px;
+
+  position: absolute;
+  bottom: 142px;
+
+  padding: 0;
+  margin: 0;
+  padding-right: 38px;
+
+  font-weight: 600;
+
+  letter-spacing: -2px;
+
+  color: rgb(51, 51, 51);
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+
+  padding: 0;
+  margin: 0;
+  padding-right: 38px;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  color: rgb(51, 51, 51);
+}
+
+article.fill h3 {
+  background: rgba(255, 255, 255, .75);
+  padding-top: .2em;
+  padding-bottom: .3em;
+  margin-top: -.2em;
+  margin-left: -57px;
+  padding-left: 57px;
+  margin-right: -57px;
+  padding-right: 57px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  margin-top: 38px;
+
+  margin-left: .75em;
+}
+ul:first-child {
+  margin-top: 0;
+}
+ul ul {
+  margin-top: .5em;
+}
+li {
+  padding: 0;
+  margin: 0;
+
+  margin-bottom: .5em;
+}
+li::before {
+  content: '·';
+
+  width: .75em;
+  margin-left: -.75em;
+
+  position: absolute;
+}
+
+pre {
+  font-family: 'Droid Sans Mono', 'Courier New', monospace;
+
+  font-size: 19px;
+  line-height: 26px;
+  padding: 5px 10px;
+  
+  letter-spacing: -1px;
+
+  margin-top: 38px;
+  margin-bottom: 38px;
+
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+  
+  overflow: hidden;
+}
+
+code {
+  font-size: 95%;
+  font-family: 'Droid Sans Mono', 'Courier New', monospace;
+
+  color: black;
+}
+
+iframe {
+  width: 100%;
+
+  height: 585px;
+
+  background: white;
+  border: 1px solid rgb(192, 192, 192);
+  margin: -1px;
+  /*box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);*/
+}
+
+h3 + iframe {
+  margin-top: 38px;
+  height: 510px;
+}
+
+article.fill iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  margin: 0;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  z-index: -1;
+}
+
+article.fill img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  z-index: -1;
+}
+img.centered {
+  margin: 0 auto;
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 38px;
+}
+th {
+  font-weight: 600;
+  text-align: left;
+}
+td,
+th {
+  border: 1px solid rgb(224, 224, 224);
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.source {
+  position: absolute;
+  left: 57px;
+  top: 608px;
+  padding-right: 165px;
+  
+  font-size: 14px;
+  letter-spacing: 0;  
+  line-height: 17px;
+}
+
+q {
+  display: block;
+  font-size: 57px;
+  line-height: 68px;
+  
+  margin-left: 19px;
+  
+  margin-top: 94px;
+  margin-right: 142px;    
+}
+q::before {
+  content: '“';
+  
+  position: absolute;
+  display: inline-block;
+  margin-left: -2.1em;
+  width: 2em;
+  text-align: right;
+  
+  font-size: 85px;
+  color: rgb(192, 192, 192);
+}
+q::after {
+  content: '”';
+
+  position: absolute;  
+  margin-left: .1em;
+
+  font-size: 85px;
+  color: rgb(192, 192, 192);  
+}
+div.author {
+  text-align: right;  
+  font-size: 38px;
+  
+  margin-top: 19px;
+  margin-right: 142px;    
+}
+div.author::before {
+  content: '—';
+}
+
+/* Size variants */
+
+article.smaller p,
+article.smaller ul {
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0;
+}
+article.smaller table {
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0;
+}
+article.smaller pre {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0;
+}
+article.smaller q {
+  font-size: 38px;
+  line-height: 45px;
+}
+article.smaller q::before,
+article.smaller q::after {
+  font-size: 57px;
+}
