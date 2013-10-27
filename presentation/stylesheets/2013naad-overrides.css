@@ -2,25 +2,25 @@
     padding: 80px 90px;
 }
 
+.slides.template-2013naad article.front-page {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/first-page-fist-2-2013naad.png'), 
+                      url('../images/first-page-left-bg-2-2013naad.png'), 
+                      url('../images/first-page-right-bg-2-2013naad.png');
+    background-position: 95% 95%, left 3%, left 80%, right 70%;
+    background-repeat: no-repeat;
+    background-size: 20%, 15%, 7%, 7%;
+}
+
 .slides.template-2013naad > article:not(.nobackground):not(.front-page) {
     background-image: url('../images/tw-logo-opacity-60.png'),
-                      url('../images/general-page-left-bg-2.png'),
-                      url('../images/general-page-right-bg-2.png');
+                      url('../images/general-page-left-bg-2-2013naad.png'),
+                      url('../images/general-page-right-bg-2-2013naad.png');
     background-position: 95% 95%, left 32%, right 60%;
     background-repeat: no-repeat;
     background-size: 20%, 8%, 8%;
     background-color: white;  
 } 
-
-.slides.template-2013naad article.front-page {
-    background-image: url('../images/tw-logo-opacity-60.png'),
-                      url('../images/first-page-fist-2.png'), 
-                      url('../images/first-page-left-bg-2.png'), 
-                      url('../images/first-page-right-bg-2.png');
-    background-position: 95% 95%, left 3%, left 80%, right 70%;
-    background-repeat: no-repeat;
-    background-size: 20%, 15%, 7%, 7%;
-}
 
 .slides.template-2013naad article img {
     max-width: 83%;

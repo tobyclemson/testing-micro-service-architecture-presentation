@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<!--
+    Google HTML5 slide template
+
+    Authors: Luke Mahé (code)
+             Marcin Wichary (code and design)
+
+             Dominic Mazzoni (browser compatibility)
+             Charles Chen (ChromeVox support)
+
+    URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Testing Strategies in a Micro-Service Architecture</title>
+    <meta charset='utf-8'>
+    <script src='javascript/slides.js'></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/2013adla-overrides.css"/>
+    <link rel="stylesheet" type="text/css" media="print" href="stylesheets/print.css"/>
+  </head>
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-2013adla'>
+
+      <article class='front-page'>
+        <h1>
+          Testing Strategies in a Micro-Service Architecture
+        </h1>
+        <p>Toby Clemson</p>
+      </article>
+
+      <article>
+        <h3>
+          The Plan
+        </h3>
+        <ul class='build'>
+          <li>Micro-Services:</li>
+          <ul>
+            <li>Definition</li>
+            <li>Anatomy</li>
+            <li>Architecture</li>
+          </ul>
+          <li>Testing</li>
+          <ul>
+            <li>Unit</li>
+            <li>Integration</li>
+            <li>Component</li>
+            <li>End to End</li>
+            <li>Contracts</li>
+          </ul>
+          <li>Questions?</li>
+        </ul>
+      </article>
+
+      <article>
+         <h3>
+           Definition of a Micro-Service
+         </h3>
+         <dl>
+           <dt><dfn>Micro-service</dfn></dt>
+           <dd>
+             A small web service supporting a specific task in a broader application work flow.
+             <br/>
+             <ul class="build">
+               <li>Micro in size, usually less than 1000 lines of code.</li>
+               <li>Single responsibility principle applied at the service level.</li>
+               <li>Often RESTful, modelling concepts as resources and using hyperlinks to associate them.</li>
+               <li>May or may not have a UI beyond the core API.</li>
+             </ul>
+           </dd>
+         </dl>
+      </article>
+
+      <article>
+         <h3>
+          Anatomy of a Micro-Service: Components
+        </h3>
+        <img class='full-slide-image' src='images/anatomy-components-2013adla.png'
+             alt="Diagram showing the components in the anatomy of a micro-service"/>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Anatomy of a Micro-Service: Communications
+        </h3>
+        <img class='full-slide-image' src='images/anatomy-communication-2013adla.png'
+             alt="Diagram showing the communications in the anatomy of a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Architecture
+        </h3>
+        <img class='full-slide-image' src='images/microservice-architecture-2013adla.png'
+             alt="Diagram showing a conceptual micro-service architecture"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Unit Level
+        </h3>
+        <dl>
+           <dt><dfn>Unit test</dfn></dt>
+           <dd>A test of the smallest piece of testable software in the application, isolated from the remainder of the code, to determine whether it behaves as expected.</dd>
+           <div class='author'>
+             <a href='http://msdn.microsoft.com/en-us/library/aa292197%28VS.71%29.aspx'>MSDN</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Unit Level
+        </h3>
+        <ul class="build">
+          <li>Two styles of unit testing, <b>mockist</b> and <b>classic</b>.</li>
+          <ul>
+            <li>Classic: State based behaviour testing.</li>
+            <li>Mockist: Interaction testing supported by mocks.</li>
+          </ul>
+          <li>What should be unit tested?</li>
+          <ul>
+            <li>Services are commonly a rich domain surrounded by plumbing and coordination code.</li>
+            <li>Domain often lends itself to a classic style of testing.</li>
+            <li>Plumbing and coordination logic usually easier to test using a mockist style.</li>
+          </ul>
+          <li>The more micro the services, the more plumbing and coordination logic overall.</li>
+          <li>Does comprehensive unit testing pay off?</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Unit Level
+        </h3>
+        <img class='full-slide-image' src='images/testing-unit-2013adla.png'
+             alt="Diagram showing what gets unit tested in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-1-2013adla.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <dl>
+           <dt><dfn>Integration test</dfn></dt>
+           <dd>A test to verify the communication paths and interaction between components and to detect interface defects.</dd>
+           <div class='author'>
+             <a href='http://www.techopedia.com/definition/7751/integration-testing'>[1]</a>
+             <a href='http://en.wikipedia.org/wiki/Software_testing#Testing_levels'>[2]</a>
+             <a href='http://programmers.stackexchange.com/questions/48237/what-is-an-integration-test-exactly'>[3]</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <ul class="build">
+          <li>Test the gap between our integration code and the external system to which we are integrating, e.g., <b>other services</b>, <b>data stores</b> or <b>caches</b>.</li>
+          <li>Not necessarily comprehensive, cover basic success and error paths.
+          <li>Other mechanisms exist for verifying the external system's contract.</li>
+          <li>Are they valuable?</li>
+          <ul class='comparison'>
+            <li class='plus'>Provide fast feedback whilst iterating on integration modules.</li>
+            <li class='minus'>Have a dependency on a system not necessarily in our control.</li>
+          </ul>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Integration Level
+        </h3>
+        <img class='full-slide-image' src='images/testing-integration-2013adla.png'
+             alt="Diagram showing what gets integration tested in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-2-2013adla.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level
+        </h3>
+        <dl>
+           <dt><dfn>Component test</dfn></dt>
+           <dd>A test that limits the scope of the exercised software to a portion of the system under test, by manipulating the system through internal code interfaces and by using test doubles to isolate the code under test from other components.</dd>
+           <div class='author'>
+             <a href='http://martinfowler.com/bliki/ComponentTest.html'>Martin Fowler</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level
+        </h3>
+        <ul class='build'>
+          <li>Treat each microservice as a component</li>
+          <li>Lots of options!</li>
+          <ul>
+            <li>in-process vs. out of process</li>
+            <li>internal stubbing vs. external stubbing</li>
+            <li>real datastore vs. in-memory datastore</li>
+          </ul>
+          <li>Act as acceptance tests at the service level, testing the core business purpose of the service.</li>
+          <li>Often care more about the contract of the service than other test suites.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level: In Process
+        </h3>
+        <img class='full-slide-image' src='images/testing-component-in-process-2013adla.png'
+             alt="Diagram showing what gets component tested using in process testing in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Aside: Internal Resources
+        </h3>
+        <ul class='build'>
+          <li>Whilst it might seem strange, internal resources prove very useful</li>
+          <ul>
+            <li>e.g., logs, feature flags, database commands, metrics, maintenance controls</li>
+          </ul>
+          <li>Can be locked down at the network level to avoid accidents in production, for example, by prefixing all with <code>/internal/...</code></li>
+          <li>Often evolve to public resources during the lifetime of a code base.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Component Level: Out of Process
+        </h3>
+        <img class='full-slide-image' src='images/testing-component-out-of-process-2013adla.png'
+             alt="Diagram showing what gets component tested using out of process testing in a micro-service"/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Progress...
+        </h3>
+        <img class='full-slide-image' src='images/testing-progress-3-2013adla.png'
+             alt="Diagram showing progress on getting full system test coverage."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <dl>
+           <dt><dfn>Functional test</dfn></dt>
+           <dd>A test that verifies that a system meets external requirements and achieves its goals, testing the entire system, end to end.</dd>
+           <div class='author'>
+             <a href='http://c2.com/cgi/wiki?FunctionalTest'>[1]</a>
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <ul class='build'>
+          <li>Exercise as much of the fully deployed system as possible.</li>
+          <li>Often more business facing, utilising business readable DSLs.</li>
+          <li>Tend to be more brittle or expensive than other levels of testing, in which case, should be few in number.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: End to End
+        </h3>
+        <img class='full-slide-image' src='images/testing-end-to-end-2013adla.png'
+             alt="Diagram showing a functional testing flow."/>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract Tests
+        </h3>
+        <dl>
+           <dt><dfn>Contract tests</dfn></dt>
+           <dd>A test at the boundary of an external service verifying that it meets the contract expected by a consuming service.</dd>
+           <div class='author'>
+             Me
+           </div>
+        </dl>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract Tests
+        </h3>
+        <ul class='build'>
+          <li>Completely decoupled from consuming service.</li>
+          <li>Assert against only those aspects of the external service required by the consuming service.</li>
+          <li>Not component tests, only checking inputs and outputs at the service's interface.</li>
+          <li>Ideally, packaged and runnable in the external service's pipeline.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Micro-Service Testing: Contract
+        </h3>
+        <img class='full-slide-image' src='images/testing-contract-2013adla.png'
+             alt="Diagram showing contract testing."/>
+      </article>
+
+
+      <article class='last'>
+        <h2>Questions?</h2>
+      </article>
+    </section>
+
+  </body>
+</html>

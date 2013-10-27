@@ -1,0 +1,58 @@
+.slides.template-2013adla > article {
+    padding: 80px 90px;
+}
+
+.slides.template-2013adla > article:not(.nobackground):not(.front-page) {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/top-bar-2013adla.png'),
+                      url('../images/bottom-bar-2013adla.png'),
+                      url('../images/page-left-bg-2013adla.png'),
+                      url('../images/page-right-bg-2013adla.png');
+    background-position: 95% 95%, left -10%, left bottom, -55% 20%, 155% 20%;
+    background-repeat: no-repeat;
+    background-size: 20%, 100%, 100%, 0%, 0%;
+    background-color: white;  
+} 
+
+.slides.template-2013adla article.front-page {
+    padding-left: 150px;
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/bottom-bar-2013adla.png'),
+                      url('../images/page-left-bg-2013adla.png'),
+                      url('../images/page-right-bg-2013adla.png');
+    background-position: 95% 95%, left bottom, -52% 20%, 148% 20%;
+    background-repeat: no-repeat;
+    background-size: 20%, 100%, 49%, 49%;
+}
+
+.slides.template-2013adla article img {
+    max-width: 83%;
+    max-height: 83%;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.slides.template-2013adla article ul ul {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.slides.template-2013adla article dl div.author {
+    margin-top: 0px;
+    margin-right: 80px;
+    font-size: 28px;
+}
+
+.slides.template-2013adla article ul.comparison {
+    list-style: none;
+}
+
+.slides.template-2013adla article ul.comparison li.plus::before {
+    content: '+';
+}
+
+.slides.template-2013adla article ul.comparison li.minus::before {
+    content: '-';
+}

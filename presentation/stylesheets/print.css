@@ -4,8 +4,8 @@
 
 .slides.template-2013naad article.front-page {
     background-image: url('../images/tw-logo-opacity-60.png'),
-                      url('../images/first-page-left-print.png'), 
-                      url('../images/first-page-right-print.png');
+                      url('../images/first-page-left-print-2013naad.png'), 
+                      url('../images/first-page-right-print-2013naad.png');
     background-position: 95% 95%, left 15%, right 60%;
     background-repeat: no-repeat;
     background-size: 19%, 15%, 9.5%;
@@ -13,19 +13,41 @@
 
 .slides.template-2013naad > article:not(.nobackground):not(.front-page) {
     background-image: url('../images/tw-logo-opacity-60.png'),
-                      url('../images/general-page-left-print.png'),
-                      url('../images/general-page-right-print.png');
+                      url('../images/general-page-left-print-2013naad.png'),
+                      url('../images/general-page-right-print-2013naad.png');
     background-position: 95% 95%, left 40%, right 54%;
     background-repeat: no-repeat;
     background-size: 20%, 9.1%, 9.1%;
     background-color: white;  
-} 
+}
 
-.slides.template-2013naad > article {
+.slides.template-2013adla article.front-page {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/bottom-bar-2013adla.png'),
+                      url('../images/page-left-bg-2013adla.png'),
+                      url('../images/page-right-bg-2013adla.png');
+    background-position: 95% 95%, left bottom, -52% 20%, 148% 20%;
+    background-repeat: no-repeat;
+    background-size: 20%, 100%, 49%, 49%;
+}
+
+.slides.template-2013adla > article:not(.nobackground):not(.front-page) {
+    background-image: url('../images/tw-logo-opacity-60.png'),
+                      url('../images/top-bar-2013adla.png'),
+                      url('../images/bottom-bar-2013adla.png'),
+                      url('../images/page-left-bg-2013adla.png'),
+                      url('../images/page-right-bg-2013adla.png');
+    background-position: 95% 95%, left -10%, left bottom, -55% 20%, 155% 20%;
+    background-repeat: no-repeat;
+    background-size: 20%, 100%, 100%, 0%, 0%;
+    background-color: white;  
+}
+
+.slides > article {
     padding: 75px 84px;
 }
 
-.slides.template-2013naad article dl div.author {
+.slides article dl div.author {
     margin-top: 0px;
     margin-right: 76px;
     font-size: 26px;
